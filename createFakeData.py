@@ -4,7 +4,6 @@ import pandas as pd
 
 fake = Faker()
 
-# Function to generate fake PII data
 def generate_fake_data(num_records=10):
     data = []
 
@@ -22,42 +21,27 @@ def generate_fake_data(num_records=10):
 
     return data
 
-# Function to create Excel file with fake PII data
-def create_excel(fake_data):
-    excel_filename = 'fake_pii_data.xlsx'
-    
-    # Convert data to DataFrame
+def create_excel(fake_data, excel_filename='fake_pii_data.xlsx'):
     df = pd.DataFrame(fake_data)
-    
-    # Write DataFrame to Excel file
     df.to_excel(excel_filename, index=False, engine='openpyxl')
-
     print(f"Excel file '{excel_filename}' created successfully.")
 
-# Function to create PDF with fake PII data
-def create_pdf(fake_data):
-    pdf_filename = 'fake_pii_data.pdf'
-    
+def create_pdf(fake_data, pdf_filename='fake_pii_data.pdf'):
     with canvas.Canvas(pdf_filename) as pdf:
         pdf.setTitle("Fake PII Data")
-        
-        # Set font
         pdf.setFont("Helvetica", 12)
-        
-        # Add PII data to the PDF
+
         for record in fake_data:
             for key, value in record.items():
                 pdf.drawString(50, pdf._pagesize[1] - 50, f"{key}: {value}")
-                pdf.translate(0, -15)  # Move down for the next line
-            pdf.translate(0, -20)  # Add extra space between records
+                pdf.translate(0, -15)
+            pdf.translate(0, -20)
 
     print(f"PDF file '{pdf_filename}' created successfully.")
 
-# Generate fake data
-fake_data = generate_fake_data(num_records=5)
+# Example usage
+num_records = 5
+fake_data = generate_fake_data(num_records=num_records)
 
-# Create Excel file with fake data
 create_excel(fake_data)
-
-# Create PDF with fake data
 create_pdf(fake_data)
