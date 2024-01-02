@@ -33,4 +33,7 @@ python Scanner.py
 
 
 
-Feel free to customize the script parameters (e.g., number of records, output file names) by modifying the relevant variables in the script.
+## Customization
+You can customize the script behavior by adjusting the parameters within the script itself. For example, you can change the number of records to generate or specify different output file names.
+
+Feel free to explore and modify the script according to your requirements!
