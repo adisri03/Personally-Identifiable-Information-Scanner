@@ -12,14 +12,13 @@ The PII Detector is a Python script designed to enhance data privacy by identify
 
 ### Multi-Format Support:
 
-The script supports the detection of PII in both PDF and Excel files, covering a wide range of common document formats.
+The script supports the detection of PII in PDF, Excel, JPEG, and JPG files, covering a wide range of common document formats.
 ### Link Extraction from Excel:
 
-Users can input Excel files containing links. The script automatically extracts these links for further analysis, providing a comprehensive approach to PII detection.
+Users can input Excel files containing links or local folder containing files. The script automatically extracts these links for further analysis, providing a comprehensive approach to PII detection.
 ### Detailed Reporting:
 
 The script generates a detailed Excel report summarizing the PII findings. The report includes information such as the column name, matched PII elements, and the corresponding link or file path.
-
 
 
 ## Prerequisites
