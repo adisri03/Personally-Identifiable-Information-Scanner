@@ -5,6 +5,11 @@
 The PII Detector is a Python script designed to enhance data privacy by identifying personally identifiable information (PII) in PDF and Excel files. PII includes sensitive data such as names, addresses, social security numbers, and more. The script empowers users to proactively scan digital documents for potential PII, allowing for a more secure and privacy-conscious handling of sensitive information.
 
 ## Key Features
+
+- Supports detection of PII in both PDF and Excel files.
+- Extracts links from Excel files for further analysis.
+- Generates an Excel report with details on PII matches.
+
 ### Multi-Format Support:
 
 The script supports the detection of PII in both PDF and Excel files, covering a wide range of common document formats.
@@ -15,11 +20,7 @@ Users can input Excel files containing links. The script automatically extracts 
 
 The script generates a detailed Excel report summarizing the PII findings. The report includes information such as the column name, matched PII elements, and the corresponding link or file path.
 
-## Features
 
-- Supports detection of PII in both PDF and Excel files.
-- Extracts links from Excel files for further analysis.
-- Generates an Excel report with details on PII matches.
 
 ## Prerequisites
 
