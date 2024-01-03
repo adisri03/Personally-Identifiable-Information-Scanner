@@ -1,39 +1,71 @@
-# PII-Scanner
-
-
-## Introduction
-This Python script uses the `Faker` library to generate fake Personally Identifiable Information (PII) data and creates both an Excel file and a PDF document containing this fake data. It can be helpful for testing and development purposes without using real sensitive information.
+# PII Detector
 
 ## Overview
-The script consists of functions to generate fake PII data, create an Excel file with the generated data, and create a PDF document with the same fake data.
+
+The PII Detector is a Python script designed to enhance data privacy by identifying personally identifiable information (PII) in PDF and Excel files. PII includes sensitive data such as names, addresses, social security numbers, and more. The script empowers users to proactively scan digital documents for potential PII, allowing for a more secure and privacy-conscious handling of sensitive information.
+
+## Key Features
+### Multi-Format Support:
+
+The script supports the detection of PII in both PDF and Excel files, covering a wide range of common document formats.
+### Link Extraction from Excel:
+
+Users can input Excel files containing links. The script automatically extracts these links for further analysis, providing a comprehensive approach to PII detection.
+### Detailed Reporting:
+
+The script generates a detailed Excel report summarizing the PII findings. The report includes information such as the column name, matched PII elements, and the corresponding link or file path.
+
+## Features
+
+- Supports detection of PII in both PDF and Excel files.
+- Extracts links from Excel files for further analysis.
+- Generates an Excel report with details on PII matches.
+
+## Prerequisites
+
+- Python 3.x
+- Required Python libraries: PyPDF2, pandas
 
 ## Installation
-To run this script, you need to have Python installed on your machine. Additionally, you'll need to install the required libraries using the following command:
 
-```bash
-pip install faker reportlab pandas
-```
+1. Clone the repository:
 
-## How to Run
-Clone or download the repository to your local machine.
+    ```bash
+    git clone https://github.com/your-username/pii-detector.git
+    ```
 
-Open a terminal and navigate to the project directory.
+2. Change to the project directory:
 
-Run the script using the following command:
+    ```bash
+    cd pii-detector
+    ```
 
-```bash
-python createFakeData.py
-```
-The script will generate fake PII data, create an Excel file (fake_pii_data.xlsx), and a PDF file (fake_pii_data.pdf) in the current working directory.
+## Usage
 
-Then run the script to identify PII data using the following command:
-```bash
-python Scanner.py
-```
+1. Run the script:
 
+    ```bash
+    python pii_detector.py
+    ```
 
+2. Follow the prompts to enter PII elements, file paths, and user information.
 
-## Customization
-You can customize the script behavior by adjusting the parameters within the script itself. For example, you can change the number of records to generate or specify different output file names.
+3. The script will generate an Excel report in the Downloads folder.
 
-Feel free to explore and modify the script according to your requirements!
+## Configuration
+
+- Customize the script for specific PII elements or detection patterns.
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request with improvements or bug fixes.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+## Acknowledgments
+
+- [PyPDF2](https://pythonhosted.org/PyPDF2/)
+- [pandas](https://pandas.pydata.org/)
+
