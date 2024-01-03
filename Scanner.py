@@ -13,10 +13,8 @@ import warnings
 switch = 0
 
 # Ask the user for links or file paths
-
 pii_elements = input("Enter the PII elements (comma-separated): ").split(',')
-
-# pii_elements = ['BSCID', 'EMPLID', 'LAST_NAME', 'FIRST_NAME', 'EMAIL', 'NAME','SSN','Birth','DOB']
+# pii_elements = []
 
 warnings.simplefilter(action='ignore', category=UserWarning)
 
@@ -112,6 +110,24 @@ def detect_pii_in_file(extracted_links, pii_elements):
          else:
 
           print(f"Unsupported file type: {file_path}")
+          
+def detect_pii_in_single_file(file_path, pii_elements):
+
+      if file_path.lower().endswith('.pdf'):
+
+            detect_pii_in_pdf(file_path, pii_elements)    
+
+      elif file_path.lower().endswith('.xls'):
+
+            detect_pii_in_xlsx(file_path, pii_elements)
+
+      elif file_path.lower().endswith('.xlsx'):
+
+            detect_pii_in_xlsx(file_path, pii_elements)
+
+      else:
+
+          print(f"Unsupported file type: {file_path}")
 
  
 
@@ -164,17 +180,18 @@ def extract_file_from_folder(folder_path):
 
   return extracted_links
 
+m = input("Does the url or path contain more than one file?")
 
 user_input = input("Enter the links or file paths: ")
 
-
-if user_input.lower().endswith('.xlsx'):
-
+if m == "yes":
+  if user_input.lower().endswith('.xlsx'):
     detect_pii_in_file(extract_links_from_xlsx(user_input), pii_elements)
-
-else:
-
+ else:
     detect_pii_in_file(extract_file_from_folder(user_input), pii_elements)
+else:
+   detect_pii_in_single_file(user_input, pii_elements)
+ 
 
 
 user_input = input("Enter your userID ")
