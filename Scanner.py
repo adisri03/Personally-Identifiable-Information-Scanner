@@ -8,9 +8,10 @@ from urllib.parse import urlparse
 from os.path import exists
 import warnings
 
+
 switch = 0
 # Ask the user for links or file paths
-pii_elements = input("Enter the PII elements(Full Name, SSN, Date of Birth, Address, Phone Numbers, Email Address) separated by commas: ").split(',')
+pii_elements = input("Please enter the PII elements you want to be searched (i.e., Full Name, SSN, Date of Birth, Address, Phone Numbers, Email Address), separated by commas: ").split(',')
 # pii_elements = []
 warnings.simplefilter(action='ignore', category=UserWarning)
 excel = []
@@ -51,7 +52,6 @@ def detect_pii_in_xlsx(xlsx_path, pii_elements):
                  excel.append(data)
                  switch = 0
              else:
-
                  switch = 1
 
 def detect_pii_in_file(extracted_links, pii_elements):
@@ -81,7 +81,7 @@ def detect_pii_in_single_file(file_path, pii_elements):
 
 
 def extract_links_from_xlsx(xlsx_path):
-     print("Wait checking the data")
+     print("Please wait we are checking thne data")
      df = pd.read_excel(xlsx_path)
      # Define a regex pattern to extract links (accepts both http(s) URLs and file paths)
      link_pattern = r'(https?://[^\s]+)|(\S+\.\S+)'
@@ -97,7 +97,7 @@ def extract_links_from_xlsx(xlsx_path):
 
  
 def extract_file_from_folder(folder_path):
-  print("Wait checking the data")
+  print("Please wait we are checking the data")
   extracted_links = []
   file_name =  os.listdir(folder_path)
   for name in file_name:
