@@ -7,13 +7,10 @@ import urllib.request
 from urllib.parse import urlparse
 from os.path import exists
 import warnings
-
- 
-
 switch = 0
 
 # Ask the user for links or file paths
-pii_elements = input("Enter the PII elements (comma-separated): ").split(',')
+pii_elements = input("Enter the PII elements(Full Name,SSN,Date of Birth,Address, Phone Numbers,Email Address) separated by commas: ").split(',')
 # pii_elements = []
 
 warnings.simplefilter(action='ignore', category=UserWarning)
@@ -187,7 +184,7 @@ user_input = input("Enter the links or file paths: ")
 if m == "yes":
   if user_input.lower().endswith('.xlsx'):
     detect_pii_in_file(extract_links_from_xlsx(user_input), pii_elements)
- else:
+  else:
     detect_pii_in_file(extract_file_from_folder(user_input), pii_elements)
 else:
    detect_pii_in_single_file(user_input, pii_elements)
