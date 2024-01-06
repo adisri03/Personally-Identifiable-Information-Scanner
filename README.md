@@ -24,8 +24,8 @@ The script generates a detailed Excel report summarizing the PII findings. The r
 ## Prerequisites
 
 - Python 3.x
-- Required Python libraries: PyPDF2, pandas, urllib3(to install use:)
--     ```bash
+- Required Python libraries: PyPDF2, pandas, urllib3:
+```bash
 pip install urllib3 pypdf2 pandas
 ```
 
