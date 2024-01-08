@@ -1,4 +1,4 @@
-# PII Detector
+# Personally Identifiable Information(PII) Scanner
 
 ## Overview
 
