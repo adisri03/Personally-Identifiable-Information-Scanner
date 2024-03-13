@@ -33,7 +33,6 @@ pip install urllib3 pypdf2 pandas
 ## Installation
 
 1. Clone the repository:
-
     ```bash
     git clone https://github.com/your-username/pii-detector.git
     ```
